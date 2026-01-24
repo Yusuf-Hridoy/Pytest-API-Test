@@ -1,0 +1,8 @@
+library needed 
+* request
+*json
+*jsonpath
+
+// pip install pytest
+
+// run commnad ( python -m pytest TC1.py )
