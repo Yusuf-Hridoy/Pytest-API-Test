@@ -41,5 +41,5 @@ def test_another_booking():
     print(response.status_code) # to see if the request was successful
     print(response.content) # to see the raw content of the response
 
-    # print the response code 
+    # print the response code hhh 
     assert response.status_code == 200
