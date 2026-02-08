@@ -19,7 +19,24 @@ def test_get_booking():
     print(response.headers)
 
 def test_get_booking_by_id():
-    booking_id = 1  # Example booking ID
+    # Create a booking first to get a valid ID
+    booking_data = {
+        "firstname": "test_get",
+        "lastname": "id_check",
+        "totalprice": 123,
+        "depositpaid": True,
+        "bookingdates": {
+            "checkin": "2024-03-01",
+            "checkout": "2024-03-05"
+        },
+        "additionalneeds": "Lunch"
+    }
+    create_response = requests.post(base_url, json=booking_data)
+    assert create_response.status_code == 200
+    booking_id = create_response.json().get("bookingid")
+    print(f"Created booking with ID: {booking_id}")
+
+    # Now verify we can fetch it
     response = requests.get(f"{base_url}/{booking_id}")
     print(response.status_code)  # to see if the request was successful
     print(response.content)  # to see the raw content of the response
