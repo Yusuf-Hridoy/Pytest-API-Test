@@ -1,5 +1,6 @@
 from Framework.utils.myConfigparser import getconfig
 from Framework.utils.myutils import getAllBooking, updateBooking, login, deleteBooking
+import requests
 
 #base_url = "https://restful-booker.herokuapp.com/booking"
 
